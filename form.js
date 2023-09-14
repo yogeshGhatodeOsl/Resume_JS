@@ -357,6 +357,7 @@ if(user_id_str[1]){
     }
     else {
         alert("Please Enter valid ID");
+        window.location.href = user_id_str[0];
     }
 }
 else {
