@@ -1,16 +1,5 @@
 let id_user = 1;
 
-const url = window.location.href;
-user_id_str = url.split("?");
-
-if(user_id_str != ""){
-    let user_id = parseInt(user_id_str, 10);
-
-    if(JSON.parse(localStorage.getItem(`${user_id}`))) {
-        displayResume(user_id);
-    }
-}
-
 
 const form = document.getElementById('thisForm');
 form.addEventListener('submit', helperSubmit);
@@ -28,7 +17,7 @@ function helperSubmit(event) {
             tools :  []
         }
     }
-    id_user++;
+    id_user += 1;
     
     // for personal information. 
     // as this input fields wants be changed we do not iterate.
@@ -122,15 +111,19 @@ function helperSubmit(event) {
     // saving resume data to the local storage
     localStorage.setItem( `${ResumeData.id}` , JSON.stringify(ResumeData) );
 
+    let cur_url = window.location.href;
+    cur_url += `?id=${ResumeData.id}`
+    window.location.href = cur_url;
     // display resume data function 
     displayResume(`${ResumeData.id}`);
-    
-
 }
 
 
 let displayResume = (resumeId) => {
     const ResumeItem = JSON.parse(localStorage.getItem(`${resumeId}`));
+
+    let container = document.querySelector(".resumeForm");
+    container.style.display = "none";
 
     const resumeDisplay = document.querySelector('.resumeDisplay');
 
@@ -209,3 +202,28 @@ let displayResume = (resumeId) => {
 } 
 
 
+// for urls generate 
+
+let url = window.location.href;
+
+let user_id_str = url.split('?');
+
+if(user_id_str[1]){
+
+    let actual_id = user_id_str[1].split('=');
+
+    let user_id = parseInt(actual_id[1], 10);
+    console.log(user_id);
+
+    if(localStorage.getItem(user_id) !== null) {
+        displayResume(user_id);
+    }
+    else {
+        alert("Please Enter valid ID");
+    }
+}
+else {
+    let container = document.querySelector(".resumeForm");
+
+    container.style.display = "";
+}
