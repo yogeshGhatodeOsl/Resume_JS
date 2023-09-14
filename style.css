@@ -13,7 +13,8 @@ header {
 }
 
 .resumeDisplay {
-    align-items: center;
+    width : 100vw;
+    text-align: center;
 }
 
 form div div {
