@@ -1,29 +1,85 @@
 /* Add CSS styling here to format your form */
 body {
     font-family: Arial, sans-serif;
+    background-color: rgb(188, 202, 202);
+    color : white;
+    padding : 0;
+    margin : 0;
+}
+
+.background_image {
+    position: fixed;
+    z-index: -1;
+    opacity: 1;
+    height: 100vh;
+    filter : brightness(40%);
+    opacity: 0.9;
+    width: 100vw;
 }
 
 header {
     text-align: center;
 }
 
-.resumeForm {
+h1 {
+    margin-top : 0;
+    padding-top : 2rem;
+    text-align: center;
+}
+
+.resumeDisplay h1 {
+    text-align: center;
+    text-decoration: underline;
+    margin-bottom: 0;
+}
+
+.container {
+    /* display: flex; */
+    width: 100vw;
+    /* text-align: center; */
+}
+
+.resumeForm, .resumeDisplayParent {
     display: flex;
     justify-content: center;
+    width: 60vw;
+    border: 2px solid white ;
+    border-radius: 0.7rem;
+    margin: auto;
+    padding-right : 0;
+    margin-bottom: 3rem;
+    box-shadow: 10px 10px 0 2px rgba(132, 131, 131, 0.5);
+    animation: fadeIn 2s ease-in-out;
+}
+
+.resumeDisplayParent {
+    background-color: antiquewhite ;
+    color : black;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+form {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap : 5rem;
 }
 
 .resumeDisplay {
     width : 100vw;
-    text-align: center;
+    /* text-align: center; */
 }
 
 form div div {
     display : grid;
     /* grid-template-columns : 1fr 3fr; */
-}
-
-.resumeForm {
-    padding-right : 5rem;
 }
 
 
@@ -41,9 +97,9 @@ input {
 }
 /* button[type="submit"] { */
 button {
-    background-color: #007BFF;
+    background-color: #4598a7;
     color: #fff;
-    width: 100%;
+    width: 107%;
     padding: 10px 20px;
     border: none;
     border-radius: 4px;
@@ -51,7 +107,7 @@ button {
 }
 /* button[type="submit"]:hover { */
 button:hover {
-    background-color: #0056b3;
+    background-color: #1b84a1;
 }
 
 .removeLast {
@@ -65,4 +121,72 @@ button:hover {
 
 .Err {
     color : red;
+}
+
+
+.Generate {
+    width : 235%;
+    background-color: blueviolet;
+    margin-bottom: 2rem;
+}
+
+.Generate:hover {
+    background-color: #4c2075;
+}
+
+
+.headFlex {
+    display: flex;
+    justify-content: center;
+    gap : 1rem;
+    margin-top: 0;
+}
+
+.Resumeheader {
+    background-color: sandybrown ;
+}
+
+
+.sectionHead {
+    padding-bottom:0.5rem;
+    padding-left : 0.5rem;
+    color : #27005D;
+    border-bottom: 2px solid black;
+}
+
+.eduDiv {
+    display: flex;
+    justify-content: space-between;
+    margin : 0 2rem;
+    background-color: #EADBC8;
+    padding : 0.2rem 1rem;
+    border-radius: 0.5rem;
+    margin-bottom: 2rem;
+}
+
+.subSecHead {
+    display : inline;
+    /* background-color: #E4E4D0; */
+    background-color: #451952;
+    color : white;
+    padding : 0.4rem 0.6rem;
+    margin-left : 2rem;
+    border-radius: 0.5rem;
+}
+
+.fulLangDiv {
+    display : flex;
+    justify-content: flex-start;
+    gap :2rem;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    margin-left : 3rem;
+}
+
+.fulLangDiv div {
+    display: inline;
+    background-color: #B4B4B3;
+    padding : 0.3rem 0.7rem;
+    border-radius: 0.4rem;
+
 }
